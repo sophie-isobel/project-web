@@ -12,9 +12,9 @@ def movie():
         return render_template('index.html', suggests=c.execute("""
             SELECT ItemID, MovieTitle, ROUND(Rating, 1) FROM movies 
             ORDER BY Rating DESC
-            LIMIT 10 
+            LIMIT 5 
         """))
 
 @app.route("/sample")
 def movie_sample():
-    return render_template('index.html', suggests=[(1, "FilmA", 3.5), (2, "FilmB", 4.5)])
+    return render_template('index.html', suggests=[(1, "Transformers",3.5), (2, "Annie Hall",2), (3, "Toy Story", 5)])
