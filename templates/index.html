@@ -18,6 +18,12 @@
                         <label class="form-check-label" for="exampleCheck1">FilmA 4.5</label>
                     </div>
                     <button type="submit" class="btn btn-primary my-5">Recommend!</button>
+                    {% for ItemID, MovieTitle, Rating in suggests %}
+                    <div class="form-check">
+                        <input type="checkbox" name="their_movies" value="{{ItemID}}" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">{{MovieTitle}} {{Rating}}</label>
+                    </div>
+                    {% endfor %}
                 </form> 
             </section>
             <hr/>
